@@ -14,8 +14,12 @@ public class LoginServlet extends HttpServlet {
     String password;
 
     @Override
+    public void init(ServletConfig config) throws ServletException {
+        super.init(config);
+    }
+
+    @Override
     protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
-        super.doGet(httpServletRequest, httpServletResponse);
 
         ServletConfig servletConfig = getServletConfig();
         username = servletConfig.getInitParameter("username");
