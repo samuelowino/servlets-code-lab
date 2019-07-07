@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymleaf.org">
+
+<!--
+
+XML namespaces are used for providing uniquely named elements and attributes in an XML document.
+They are defined in a W3C recommendation. An XML instance may contain element or attribute names
+from more than one XML vocabulary.
+
+-->
+
+    <head>
+        <title>Java Web Development Labs</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" type="text/css" media="all" href="../../css/main.css" th:href="@{/css/main.css}" />
+    </head>
+
+    <body>
+
+        <!--  Product Logo -->
+        <div>
+            <img src="../../images/logo.png" alt="Jave Web Development Logo" title="JWD Labs logo"
+                 th:src="@{/images/logo.png}" th:alt-title="#{logo}" />
+        </div>
+
+        <!-- Welcome Messages -->
+
+        <p th:utext="#{home.welcome(${session.user.username})}">Welcome to our JWD Lab</p>
+
+        <!-- Today's Date -->
+
+<!--        <p>-->
+<!--            Today is: <span th:with="df=#{date.format}" th:text=""${#calendars.format(today,df)}> 13 February 2011</span>-->
+<!--        </p>-->
+
+        <!-- Navigation Menu -->
+
+        <p> Please select an option</p>
+
+        <ol>
+            <li><a href="product/list.html" th:href="@{/product/list}">Product List</a></li>
+            <li><a href="order/list.html" th:href="@{/order/list}">Order List</a></li>
+        </ol>
+
+        <div th:insert="~{footer::copy}">&copy; 2011 The Static JWD Templates</div>
+
+    </body>
+
+</html>
